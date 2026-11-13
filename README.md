@@ -21,7 +21,7 @@ For local API development, create a `.env.local` file with `DATABASE_URL` from a
 2. Add a PostgreSQL integration from the Vercel Marketplace (Neon is the configured serverless driver) and ensure `DATABASE_URL` or `POSTGRES_URL` is available to production and preview environments. The API creates the required tables on first use.
 3. Set `ADMIN_API_TOKEN` to a high-entropy secret and `RATE_LIMIT_SECRET` to another high-entropy secret in Vercel project settings. Redeploy after changing environment variables.
 4. Optionally set `VITE_META_PIXEL_ID` to the numeric Meta Pixel ID, then redeploy. The Meta Lead conversion fires only after the database insert succeeds. If unset, there is no Meta Pixel request. UTM parameters and `fbclid` / `gclid` are preserved for the registration record.
-5. Confirm the database region is close to the selected Vercel Function region. Review consent/privacy text for the business’s actual contact, retention and deletion policies before public launch.
+5. The API Function is pinned to Mumbai (`bom1`) for the India-focused audience; choose the matching Mumbai / `ap-south-1` region for the Neon database where available. Review consent/privacy text for the business’s actual contact, retention and deletion policies before public launch.
 
 No event date, time, instructor profile, testimonial or pass limit has been invented. Add these only after they are confirmed. The privacy page and form copy should be updated if the business's actual handling differs from the documented flow.
 
